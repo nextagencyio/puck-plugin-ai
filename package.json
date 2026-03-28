@@ -1,0 +1,67 @@
+{
+  "name": "@decoupled/puck-plugin-ai",
+  "version": "0.1.0",
+  "description": "AI chat plugin for Puck editor — drop-in replacement using Groq/Llama with Unsplash image support",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@puckeditor/core": "^0.21.0",
+    "groq-sdk": ">=0.5.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "groq-sdk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@puckeditor/core": "^0.21.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "groq-sdk": "^1.1.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "puck",
+    "puck-plugin",
+    "puck-ecosystem",
+    "ai",
+    "groq",
+    "llama",
+    "page-builder",
+    "visual-editor",
+    "unsplash"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nextagencyio/puck-plugin-ai.git"
+  }
+}
