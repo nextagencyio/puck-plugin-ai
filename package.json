@@ -1,6 +1,6 @@
 {
   "name": "puck-plugin-ai",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "AI chat plugin for Puck editor — drop-in replacement using Groq/Llama with Unsplash image support",
   "license": "MIT",
   "main": "./dist/index.js",

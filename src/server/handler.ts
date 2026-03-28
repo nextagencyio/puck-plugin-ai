@@ -21,6 +21,7 @@ const DEFAULT_EXAMPLE_PAGE = JSON.stringify({
   content: [
     { type: 'Hero', props: { id: 'Hero-1', eyebrow: 'Welcome', title: 'Build Something Amazing', subtitle: 'The platform that helps you ship faster.', layout: 'centered', backgroundColor: 'gradient', primaryCtaText: 'Get Started', primaryCtaUrl: '/signup' } },
     { type: 'CardGroup', props: { id: 'CardGroup-1', eyebrow: 'Features', title: 'Why Choose Us', columns: '3', cards: [{ icon: 'Zap', title: 'Fast', description: 'Blazing speed.' }, { icon: 'Shield', title: 'Secure', description: 'Enterprise security.' }] } },
+    { type: 'Pricing', props: { id: 'Pricing-1', eyebrow: 'Pricing', title: 'Simple Pricing', subtitle: 'No hidden fees.', tiers: [{ name: 'Free', price: '$0', billingPeriod: 'forever', description: 'For individuals', isFeatured: false, ctaText: 'Start Free', ctaUrl: '/signup' }, { name: 'Pro', price: '$29', billingPeriod: '/month', description: 'For teams', isFeatured: true, ctaText: 'Start Trial', ctaUrl: '/signup' }, { name: 'Enterprise', price: 'Custom', billingPeriod: '', description: 'For large orgs', isFeatured: false, ctaText: 'Contact Sales', ctaUrl: '/contact' }] } },
     { type: 'Newsletter', props: { id: 'Newsletter-1', title: 'Stay Updated', subtitle: 'Get the latest updates.', placeholder: 'Enter your email', buttonText: 'Subscribe', backgroundColor: 'dark' } },
   ],
   root: { props: { title: 'My Landing Page' } },
@@ -70,7 +71,8 @@ Example:
 5. The "id" must be unique for new sections (e.g., "Hero-1", "CardGroup-2"). For updates, keep the original id.
 6. For image fields: set the value to a SHORT search term describing the image (e.g., "modern office workspace", "coffee shop interior"). Do NOT use URLs.
 7. For icon fields in cards/features: use Lucide icon names like Zap, Shield, Blocks, Code, Rocket, Lock, Cloud, Database, Users, Star, Heart, Globe, Mail, Phone.
-8. For rating fields in testimonials: use a single number like "5", not "5/5".${extraInstructions}`
+8. For rating fields in testimonials: use a single number like "5", not "5/5".
+9. For pricing tiers: "price" should be ONLY the dollar amount like "$0", "$29", "$99", or "Custom". Never include the billing period in the price (no "$29/month"). Put the billing period in "billingPeriod" instead (e.g., "/month", "/year", "forever").${extraInstructions}`
 }
 
 /**
