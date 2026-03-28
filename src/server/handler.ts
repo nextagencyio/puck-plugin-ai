@@ -55,12 +55,24 @@ Example:
 Example:
 {"action": "create", "data": ${examplePage}}
 
-## IMPORTANT
+## IMPORTANT — Choosing the Right Action
 
-- For "add": return ONLY the new section(s). Never re-generate existing sections.
-- For "update": keep the SAME id as the original section. Only change the fields the user asked about.
-- For "create": only use when the page is empty or user explicitly asks for a new page.
-- When in doubt between "add" and "create", choose "add".
+- **"update"** when the user wants to CHANGE something that already exists on the page:
+  - "Add a testimonial to the testimonials section" → UPDATE (modifying existing section's array)
+  - "Add a card to the features" → UPDATE (modifying existing section's array)
+  - "Change the hero title" → UPDATE
+  - "Add a third pricing tier" → UPDATE (modifying existing pricing section)
+  - "Rewrite the FAQ answers" → UPDATE
+
+- **"add"** ONLY when the user wants a completely NEW section type that doesn't exist yet:
+  - "Add a pricing section" (when no pricing exists) → ADD
+  - "Add a newsletter" (when no newsletter exists) → ADD
+
+- **"create"** ONLY when the page is empty or user explicitly says "create a new page" / "start over"
+
+- For "update": return the FULL updated section with ALL its existing content PLUS the changes. Keep the SAME id. Include ALL existing array items plus any new ones.
+- For "add": return ONLY the new section(s). Never duplicate existing sections.
+- When in doubt, choose "update" over "add".
 
 ## Rules
 
