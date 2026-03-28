@@ -1,6 +1,6 @@
 {
-  "name": "@decoupled/puck-plugin-ai",
-  "version": "0.1.0",
+  "name": "puck-plugin-ai",
+  "version": "0.2.0",
   "description": "AI chat plugin for Puck editor — drop-in replacement using Groq/Llama with Unsplash image support",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -28,22 +28,18 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
+  "dependencies": {
+    "groq-sdk": "^1.1.2"
+  },
   "peerDependencies": {
     "@puckeditor/core": "^0.21.0",
-    "groq-sdk": ">=0.5.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "groq-sdk": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@puckeditor/core": "^0.21.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "groq-sdk": "^1.1.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tsup": "^8.4.0",
